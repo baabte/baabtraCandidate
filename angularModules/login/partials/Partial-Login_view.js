@@ -150,10 +150,9 @@ $scope.emailPattern = (function() {
 
 $scope.loginSuccessCallback=function(data){
     $scope.logData=angular.fromJson(JSON.parse(data));
-
     var whoCanAccessThis = [bbConfig.MURID];
     if(angular.equals($scope.logData.result,'true')){
-      console.log(whoCanAccessThis.indexOf($scope.logData.ActiveUserData.roleMappingObj.fkRoleId));
+      
       if(angular.equals(whoCanAccessThis.indexOf($scope.logData.ActiveUserData.roleMappingObj.fkRoleId), -1)){
         $scope.logData.result = false;
       }
