@@ -63,9 +63,13 @@ angular.module('baabtra')
   // }])
   .constant('bbConfig',{ //used for storing enviornment variables
 
+
     // "BWS": "http://127.0.0.1:8000/",//local
     // "BWS": "http://services.baabtra.com/",//server - production
-    "BWS": "http://server.baabtra.in/",//server-test
+    // "BWS": "http://127.0.0.1:8000/",//local
+    "BWS": "http://service.99lms.com/",//server-test
+   // "BWS": "http://services.baabtra.com/",//server - production
+    // "BWS": "http://server.mb-test.in/",//server-test
 
      "SARID":1, // SuperAdminRoleID
      "CURID":2, // CompanyUser
@@ -77,7 +81,9 @@ angular.module('angular-custom-form',[]) /*Config constant for angular custom fo
 .constant('bbConfig',{ //used for storing enviornment variables
      // "BWS": "http://127.0.0.1:8000/",//local
      // "BWS": "http://services.baabtra.com/",//server - production
-    "BWS": "http://server.baabtra.in/",//server-test
+    // "BWS": "http://server.baabtra.in/",//server-test
+    "BWS": "http://service.99lms.com/",//server-test
+     //"BWS": "http://services.baabtra.com/",//server - production
      "SARID":1, // SuperAdminRoleID
      "CURID":2, // CompanyUser
      "MURID":3, // MenteeUser
