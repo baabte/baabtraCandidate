@@ -146,6 +146,16 @@ this.FnLoadGlobalValues=function(key)
      });
     return promise;
   }; 
-
+this.fnCheckDomainExits =function(domainName){
+  var promise=  $http({
+    url: bbConfig.BWS+'checkDomainExits/',
+    data: {domainName:domainName},
+    method: 'POST',
+    withCredentials: false,
+    contentType:'application/json',
+    dataType:'json',
+  })
+  return promise;
+};
 
 }]);
