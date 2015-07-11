@@ -109,10 +109,9 @@ angular.module('baabtra')
                 if(angular.equals($rootScope.userinfo.ActiveUserData,undefined)){
                   $rootScope.userinfo.ActiveUserData = {};
                 }
-                 console.log(res);
                 $rootScope.userinfo.ActiveUserData.companyName = res.companyName;
                 $rootScope.userinfo.ActiveUserData.appSettings = res.appSettings; 
-               
+
                 $location.path('/login')
               }
               else{
