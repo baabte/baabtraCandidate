@@ -70,7 +70,8 @@ angular.module('baabtra')
      "SARID":1, // SuperAdminRoleID
      "CURID":2, // CompanyUser
      "MURID":3, // MenteeUser
-     "RURID":4  // ResellerUser
+     "RURID":4,  // ResellerUser
+     "PUSRID":5  // ParentUser
  });
 
 angular.module('angular-custom-form',[]) /*Config constant for angular custom form */
@@ -81,7 +82,8 @@ angular.module('angular-custom-form',[]) /*Config constant for angular custom fo
      "SARID":1, // SuperAdminRoleID
      "CURID":2, // CompanyUser
      "MURID":3, // MenteeUser
-     "RURID":4  // ResellerUser
+     "RURID":4,  // ResellerUser
+     "PUSRID":5  // ParentUser
  });
 
 // added by lijin for offline online check
