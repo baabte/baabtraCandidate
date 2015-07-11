@@ -32,7 +32,11 @@ angular.module('baabtra').controller('header',['$scope','$rootScope','$state','l
 						// if(logoutObject.msg=="success"){
 							localStorageService.set('logDatas','{}');//resetting the userinfo before logout 
 			   				$rootScope.loggedIn=false;
-			   				$rootScope.userinfo=undefined;
+			   				var appSettings = $rootScope.userinfo.ActiveUserData.appSettings;
+			   				$rootScope.userinfo = {};
+			   				$rootScope.userinfo.ActiveUserData = {};
+			   				$rootScope.userinfo.ActiveUserData.appSettings = appSettings;
+			   				
 							$state.go('login');//redirecting path into login
 						// }
 					}

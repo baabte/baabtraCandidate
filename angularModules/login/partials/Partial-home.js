@@ -8,7 +8,7 @@ $rootScope.errTooltip = "Please choose an image for the course";
 $scope.viewMenu = false;//for controll menu view in mobile
 
 $rootScope.$watch('userinfo',function(){
-  if($rootScope.userinfo){
+  if($rootScope.userinfo.ActiveUserData){
     
     $scope.rm_id = $rootScope.userinfo.ActiveUserData.roleMappingId.$oid;
     $scope.userinfo = $rootScope.userinfo;
