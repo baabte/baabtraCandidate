@@ -1,4 +1,4 @@
-angular.module('baabtra').controller('header',['$scope','$rootScope','$state','localStorageService','header','commonService','$modal', function($scope,$rootScope,$state,localStorageService,header,commonService,$modal) {
+angular.module('baabtra').controller('header',['$scope','$rootScope','$state','localStorageService','header','commonService','$modal', 'bbConfig', function($scope,$rootScope,$state,localStorageService,header,commonService,$modal, bbConfig) {
 		
 		if($rootScope.userinfo){
 			$scope.loggedUserInfo=$rootScope.userinfo.ActiveUserData;
@@ -7,6 +7,11 @@ angular.module('baabtra').controller('header',['$scope','$rootScope','$state','l
   					return $rootScope.userinfo;
 		}, function() {
 				if($rootScope.userinfo){
+					var whoCantAccessThis = [bbConfig.SARID, bbConfig.CURID];
+				      
+				      if(!angular.equals(whoCantAccessThis.indexOf($rootScope.userinfo.ActiveUserData.roleMappingObj.fkRoleId), -1)){
+				        $scope.logout();
+				      }
 					$scope.loggedUserInfo=$rootScope.userinfo.ActiveUserData;
 				}
 		}, true);		
