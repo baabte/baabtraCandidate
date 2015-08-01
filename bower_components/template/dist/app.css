@@ -1818,8 +1818,8 @@ body {
 }
 
 .app {
-  position: relative;
-  width: 100%;
+position: relative;
+  width: 98%;
   height: auto;
   min-height: 100%;
   padding-bottom: 47px;
@@ -4037,7 +4037,10 @@ a.text-dark:hover {
 
 .no-padding-h {
   padding-right: 0 !important;
-  padding-left: 0 !important;
+  padding-left: 17px !important;
+  height: 56px;
+  margin-bottom: -40px;
+  padding-top: 26px;
 }
 
 .no-padding-v {
@@ -4051,6 +4054,7 @@ a.text-dark:hover {
 
 .p-sm {
   padding: 10px;
+  padding-right: 0px;
 }
 
 .p {

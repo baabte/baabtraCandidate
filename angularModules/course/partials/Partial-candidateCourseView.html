@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-12" style="padding-right:0px;">
     <div class="panel b-t b-03A9F4 bg-light dk">
       <div set-sub-heading-and-background-color class="panel-heading font-bold text-white  p baab-shadow" >
         <span translate="{{'My Courses'|translate}}"></span>
@@ -25,7 +25,10 @@
                     <div class="font-bold text-black p-v-xs m-h-sm">{{course.Name}}</div>
                     <div class="text-black  course-description text-muted content-limiter "ng-bind-html="course.Description"></div>
                     <div>
-                      <div class="btn btn-material-blue-400" ng-click="navigateToClassroom(course._id.$oid)" translate="{{'Take me to classroom'|translate}}"></div>
+                      <div class="btn btn-material-blue-400" ng-click="navigateToClassroom(course._id.$oid)" translate="{{'Take me to classroom'|translate}}" style="width: 100%;
+  font-size: 93%;
+  padding-left: 8%;
+"></div>
                     </div>
                   </div>
             </div>

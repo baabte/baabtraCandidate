@@ -1,24 +1,34 @@
         <!-- navbar header ng-class="{'box-shadow-inset dk':app.settings.headerShadow}"  -->
       <!-- navbar header ng-class="{'box-shadow-inset dk':app.settings.headerShadow}"  -->
 
-      <div class="navbar-header p-v-xs" ng-class="{'box-shadow-inset dk':app.settings.headerShadow}">
+      <div class="navbar-header p-v-xs" ng-class="{'box-shadow-inset dk':app.settings.headerShadow}" >
+        
+        <button class="pull-right visible-xs" bs-aside="aside" data-template="angularModules/login/partials/Partial-sm_User_Menu.html" data-placement="right" data-animation="am-slide-right aside-open-inner modal-open" data-container="body"  style="  padding-top: 12px;">
 
-        <button class="pull-right visible-xs" bs-aside="aside" data-template="angularModules/login/partials/Partial-sm_User_Menu.html" data-placement="right" data-animation="am-slide-right aside-open-inner modal-open" data-container="body">
-          <!-- <span class="visible-xs m-r pull-left">{{userinfo.ActiveUserData.username}}</span> -->
+          <span class="visible-xs m-r pull-left">{{userinfo.ActiveUserData.username}}</span>
          
-          
+          <qrcode ng-if="!userinfo.ActiveUserData.roleMappingObj.avatar.length" version="2" size="30" color="#4A148C" ng-click="$hide()" class="navbar-img  pull-right m-l-xs m-r-xs" data="{{userinfo.ActiveUserData.username}}"  style="padding-top: 13px;"></qrcode>
           <img  ng-if="userinfo.ActiveUserData.roleMappingObj.avatar.length" ng-src="{{userinfo.ActiveUserData.roleMappingObj.avatar}}" class="navbar-img img-circle pull-right m-t" style="margin-top: 0px;">
         </button>
-        <span class="pull-right visible-xs" data-animation="am-fade" data-template="angularModules/Notification/partials/Popover-notifictionPopover.html" data-placement="bottom-right" bs-dropdown="dropdown">
+
+        <span class="pull-right visible-xs" data-animation="am-fade" data-template="angularModules/Notification/partials/Popover-notifictionPopover.html" data-placement="bottom-right" bs-dropdown="dropdown" style="  padding-top: 12px;
+  padding-right: 3%;">
+
               <i class="fa fa-bell text-lg m-v"  bs-tooltip data-title="Notifications" data-placement="left"></i>
               <b class="badge bg-danger up" ng-if="$root.data.userNotification.notification.length > 0">{{$root.data.userNotification.notification.length}}</b>
+              
 
-          </span>
+        </span>
+      <button class="pull-right visible-xs" style="  padding-right: 10%;
+  padding-left: 1%;
+  margin-top: 4%;
+  float: right;" type="button" ng-model="selectedlanguage"  ng-options="obj as obj.language for obj in availlangualges" ng-change="changeLanguage(selectedlanguage)" bs-select>
+      </button>
         <!-- brand -->
         <a bs-tooltip data-title="Click to change logo" data-placement="right" class="navbar-brand text-lt" ng-if="$root.userinfo.ActiveUserData.appSettings.logo" ng-click="appSettings()" style="width: auto;">
           <img src="{{$root.userinfo.ActiveUserData.appSettings.logo}}" class="img-responsive" style="max-height: 40px !important;">
         </a>
-
+          
         <!-- / brand -->
       </div>
       <!-- / navbar header -->
@@ -74,7 +84,7 @@
           </li> -->
 
           <!-- end temporary menu for test -->
-         <!--  <li>
+         <!--  <li>-->
           
 <!--           <li>
             <a href 
