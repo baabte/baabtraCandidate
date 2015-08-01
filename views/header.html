@@ -19,11 +19,11 @@
               
 
         </span>
-      <button class="pull-right visible-xs" style="  padding-right: 10%;
+      <!-- <button class="pull-right visible-xs" style="  padding-right: 10%;
   padding-left: 1%;
   margin-top: 4%;
   float: right;" type="button" ng-model="selectedlanguage"  ng-options="obj as obj.language for obj in availlangualges" ng-change="changeLanguage(selectedlanguage)" bs-select>
-      </button>
+      </button> -->
         <!-- brand -->
         <a bs-tooltip data-title="Click to change logo" data-placement="right" class="navbar-brand text-lt" ng-if="$root.userinfo.ActiveUserData.appSettings.logo" ng-click="appSettings()" style="width: auto;">
           <img src="{{$root.userinfo.ActiveUserData.appSettings.logo}}" class="img-responsive" style="max-height: 40px !important;">
@@ -40,15 +40,15 @@
 
         <ul class="nav navbar-nav navbar-right m-r-n ">
           <li >
-             <button style="padding-right:3px;padding-left:3px;margin-top:18px" type="button"  class="btn {{$root.userinfo.ActiveUserData.appSettings.headerColor}}" ng-model="selectedlanguage"  ng-options="obj as obj.language for obj in availlangualges" ng-change="changeLanguage(selectedlanguage)" bs-select>
+             <button type="button"  class="btn {{$root.userinfo.ActiveUserData.appSettings.headerColor}}" ng-model="selectedlanguage"  ng-options="obj as obj.language for obj in availlangualges" ng-change="changeLanguage(selectedlanguage)" bs-select>
              
              </button>
           </li>
           
 
           <li >
-            <a href=""  data-animation="am-fade" data-template="angularModules/Notification/partials/Popover-notifictionPopover.html" data-placement="bottom-right" bs-dropdown="dropdown">
-              <i class="fa fa-bell text-lg m-v-xs" bs-tooltip data-title="Notifications" data-placement="left"></i>
+            <a href=""  data-animation="am-fade" data-template="angularModules/Notification/partials/Popover-notifictionPopover.html" data-placement="bottom-right"  bs-dropdown="dropdown">
+              <i class="fa fa-bell text-lg " bs-tooltip data-title="Notifications" data-placement="left"></i>
               <b class="badge bg-danger up" ng-if="$root.data.userNotification.notification.length > 0">{{$root.data.userNotification.notification.length}}</b>
 
             </a>

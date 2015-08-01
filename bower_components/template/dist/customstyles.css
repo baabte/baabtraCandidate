@@ -974,3 +974,7 @@ ul.rating {
 .bg-white{
   background: #fff!important;
 }
+
+.iframe-width iframe{
+  width: 100% !important;
+}
