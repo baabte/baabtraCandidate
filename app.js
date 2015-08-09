@@ -47,6 +47,7 @@
         'googlechart',
         'gettext',
         'timer',
+        'angularTreeview',
         'internationalPhoneNumber',
         'checklist-model',
         'angular-flipclock',
