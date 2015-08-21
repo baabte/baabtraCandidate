@@ -7,12 +7,14 @@ angular.module('baabtra').controller('header',['$scope','$rootScope','$state','l
   					return $rootScope.userinfo;
 		}, function() {
 				if($rootScope.userinfo){
-					var whoCantAccessThis = [bbConfig.SARID, bbConfig.CURID];
-				      
-				      if(!angular.equals(whoCantAccessThis.indexOf($rootScope.userinfo.ActiveUserData.roleMappingObj.fkRoleId), -1)){
-				        $scope.logout();
-				      }
-					$scope.loggedUserInfo=$rootScope.userinfo.ActiveUserData;
+					if($rootScope.userinfo.userLoginId){
+						var whoCantAccessThis = [bbConfig.SARID, bbConfig.CURID];
+					      
+					      if(!angular.equals(whoCantAccessThis.indexOf($rootScope.userinfo.ActiveUserData.roleMappingObj.fkRoleId), -1)){
+					        $scope.logout();
+					      }
+						$scope.loggedUserInfo=$rootScope.userinfo.ActiveUserData;
+					}
 				}
 		}, true);		
 
