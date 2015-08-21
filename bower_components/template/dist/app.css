@@ -1817,13 +1817,13 @@ body {
   overflow-x: hidden;
 }
 
-.app {
+/*.app {
 position: relative;
   width: 98%;
   height: auto;
   min-height: 100%;
   padding-bottom: 47px;
-}
+}*/
 
 .modal-open .app {
   height: 100%;
@@ -4037,11 +4037,9 @@ a.text-dark:hover {
 
 .no-padding-h {
   padding-right: 0 !important;
-  padding-left: 17px !important;
-  height: 56px;
-  margin-bottom: -40px;
-  padding-top: 26px;
+  padding-left: 0 !important;
 }
+
 
 .no-padding-v {
   padding-top: 0 !important;
@@ -4054,7 +4052,6 @@ a.text-dark:hover {
 
 .p-sm {
   padding: 10px;
-  padding-right: 0px;
 }
 
 .p {
@@ -4202,9 +4199,9 @@ a.text-dark:hover {
   overflow-y: hidden !important;
 }
 
-.scrollable.hover > * {
+/*.scrollable.hover > * {
   margin-top: -1px;
-}
+}*/
 
 .scrollable.hover:hover {
   overflow: visible !important;
