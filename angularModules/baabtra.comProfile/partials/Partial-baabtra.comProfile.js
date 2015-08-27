@@ -4,7 +4,6 @@ angular.module('baabtra').controller('BaabtraComprofileCtrl',['$scope', '$rootSc
 	if(!$rootScope.userinfo){
 		commonService.GetUserCredentials($scope);
 		$rootScope.hide_when_root_empty=false;
-		return;
 	}
 
 	if(angular.equals($rootScope.loggedIn,false)){
@@ -18,16 +17,29 @@ angular.module('baabtra').controller('BaabtraComprofileCtrl',['$scope', '$rootSc
 
 
 
-if(angular.equals(bbConfig.MURID, roleId)){
-	$stateParams.userLoginId = $rootScope.userinfo.ActiveUserData.userLoginId;
-	$stateParams.type = 'detailed';
-	//$state.go('home.main.baabtraProfile',{type:$stateParams.type, userLoginId:$stateParams.userLoginId});
-
-}
 
 $scope.baabtraProfile = {};
 $scope.baabtraProfile.type = $stateParams.type;
-var userData = baabtraProfile.fnLoadUserProfileDetails($stateParams.userLoginId, $stateParams.type);
+
+var dataObj = {};
+if(angular.equals(bbConfig.MURID, roleId)){
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth()+1;
+	var day = today.getDate();
+	var currentDate = year+'/'+month+'/'+day;
+
+	dataObj.userLoginId = $rootScope.userinfo.ActiveUserData.userLoginId;
+	dataObj.type = 'detailed';
+	dataObj.date = currentDate;
+
+}
+else{
+	dataObj.userLoginId = $stateParams.userLoginId;
+	dataObj.type = $stateParams.type;
+}
+
+var userData = baabtraProfile.fnLoadUserProfileDetails(dataObj);
 
 userData.then(function (data) {
 	$scope.baabtraProfile.result = angular.fromJson(JSON.parse(data.data));
@@ -36,6 +48,7 @@ userData.then(function (data) {
 	$scope.baabtraProfile.tests = [];
 	$scope.baabtraProfile.courseDropdown = [];
 	$scope.buildBaabtraProfile($scope.baabtraProfile.result.courses, '');
+	
 });
 
 $scope.buildBaabtraProfile = function(courses, loadingType){
