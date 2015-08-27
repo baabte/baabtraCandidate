@@ -1,9 +1,21 @@
 angular.module('baabtra').controller('CandidatecourseviewCtrl',['$scope','$rootScope','candidateCourseView','commonService','$state',function($scope,$rootScope,candidateCourseView,commonService,$state){
 
-if(!$rootScope.userinfo){ //checking for the login credentilas is present or not
-      $rootScope.hide_when_root_empty=true;
-      commonService.GetUserCredentials($scope);
-}
+	/*login detils start*/
+	if(!$rootScope.userinfo){
+		commonService.GetUserCredentials($scope);
+		$rootScope.hide_when_root_empty=false;
+		return;
+	}
+
+	if(angular.equals($rootScope.loggedIn,false)){
+		$state.go('login');
+	}
+
+	var rm_id = $rootScope.userinfo.ActiveUserData.roleMappingId.$oid;
+	var roleId = $rootScope.userinfo.ActiveUserData.roleMappingObj.fkRoleId;
+	var companyId = $rootScope.userinfo.ActiveUserData.roleMappingObj.fkCompanyId.$oid;
+	/*login detils ends*/
+	
 var courses = candidateCourseView.loadCoursesForCandidates($rootScope.userinfo.userLoginId);
 	courses.then(function (data) {
 		if(angular.fromJson(JSON.parse(data.data)).length){

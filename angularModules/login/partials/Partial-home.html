@@ -38,8 +38,8 @@ Created On:12/11/2014 -->
 </div>
 </div>
 <div >
-	<div ng-style="($root.userinfo.ActiveUserData.modernView != 'modern') && {'margin-top':'46px'}"  class="row " name="innercontent" ui-view style="margin-top: -6px;">
-    <div ng-if="$root.userinfo.ActiveUserData.modernView == 'modern' " class="col-xs-12"  masonry='{ "transitionDuration" : "0.8s" , "itemSelector" : ".tile"}'>
+	<div ng-style="($root.userinfo.ActiveUserData.modernView != 'modern') && {'margin-top':'46px'}"  class="" name="innercontent" ui-view style="margin-top: -6px;">
+    <div ng-if="$root.userinfo.ActiveUserData.modernView == 'modern' " class="p-v"  masonry='{ "transitionDuration" : "0.8s" , "itemSelector" : ".tile"}'>
       <div ng-if="(menu.canView || (menu.canView == undefined)) && userMenus.length" masonry-tile  ng-repeat="menu in userMenus" class="text-center p-sm pull-left tile masonry-brick" style="width:140px; margin-bottom:0px;" >
 
 
